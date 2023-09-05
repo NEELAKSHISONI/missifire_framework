@@ -59,8 +59,9 @@ function copy_commons {
 	fi
 
 	echo "Copying a new docker compose config file."
+	
 	if [[(-f $DOCKER_YML) && (-f $BANK_SERVICES/$DOCKER_YML)]]; then
-		mv $DOCKER_YML $BANK_SERVICES/$DOCKER_YML_ORIGINAL
+		mv $BANK_SERVICES/$DOCKER_YML $BANK_SERVICES/$DOCKER_YML_ORIGINAL
 		cp $DOCKER_YML $BANK_SERVICES
 	else
 		echo `pwd`
